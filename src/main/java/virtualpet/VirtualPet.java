@@ -46,8 +46,8 @@ public class VirtualPet {
 
 	public void addStatNutrition(int amount) {
 		this.statNutrition += amount;
-		if (this.statNutrition > 16) {
-			this.statNutrition = 16;
+		if (this.statNutrition > 15) {
+			this.statNutrition = 15;
 		}
 	}
 
@@ -71,8 +71,8 @@ public class VirtualPet {
 
 	public void addStatMood(int amount) {
 		this.statMood += amount;
-		if (this.statMood > 16) {
-			this.statMood = 16;
+		if (this.statMood > 15) {
+			this.statMood = 15;
 		}
 	}
 
@@ -96,8 +96,8 @@ public class VirtualPet {
 
 	public void addStatEnergy(int amount) {
 		this.statEnergy += amount;
-		if (this.statEnergy > 16) {
-			this.statEnergy = 16;
+		if (this.statEnergy > 15) {
+			this.statEnergy = 15;
 		}
 	}
 
@@ -105,25 +105,28 @@ public class VirtualPet {
 
 	public void inputFeed() {
 		this.addStatNutrition(6);
-		this.addStatMood(2);
+		this.addStatMood(9);
+		this.addStatEnergy(6);
 	}
 
 	public void inputPlay() {
-		this.addStatMood(6);
-		this.subtractStatEnergy(2);
-		this.subtractStatNutrition(2);
+		this.addStatMood(9);
+		this.subtractStatEnergy(4);
+		this.subtractStatNutrition(4);
 	}
 
 	public void inputSleep() {
 		this.addStatEnergy(6);
-		this.addStatMood(2);
-		this.subtractStatNutrition(2);
+		this.addStatMood(9);
+		this.subtractStatNutrition(4);
 	}
+	
+	
 
 	/* On Tick */
 
 	public void tick() {
-		this.subtractStatMood(1);
+		this.subtractStatMood(3);
 		this.subtractStatEnergy(1);
 		this.subtractStatNutrition(1);
 	}

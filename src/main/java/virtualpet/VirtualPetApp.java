@@ -8,7 +8,9 @@ public class VirtualPetApp {
 
 		Scanner input = new Scanner(System.in);
 
-		System.out.println("Welcome, and say \"Hi!\" to your new Virtual Pet!");
+		/* New pet creation */
+
+		System.out.println("Welcome, and say \"Hi!\" to your new dog, your new Virtual Pet!");
 		System.out.println("Give your pet a name!");
 		String nameInput = input.nextLine();
 		VirtualPet pet = new VirtualPet(nameInput);
@@ -16,9 +18,13 @@ public class VirtualPetApp {
 		System.out.println();
 		System.out.println(pet.getName() + " wags its tail at you. It seems to like that name!\n");
 
+		/* Main Game Loop */
+
 		while (true) {
 
-			int choice = 0;
+			String choice = "";
+
+			// Name Heading
 
 			for (int i = 0; i < pet.getName().length(); i++) {
 				System.out.print("*");
@@ -28,35 +34,70 @@ public class VirtualPetApp {
 				System.out.print("*");
 			}
 
+			// Stats Heading
+
 			System.out.println("\nNutrition: " + pet.getStatNutrition());
 			System.out.println("Energy: " + pet.getStatEnergy());
 			System.out.println("Mood: " + pet.getStatMood());
-
+			
+			// Input Options
+			
 			System.out.println("\n" + pet.getName() + " looks at you in anticipation.");
 			System.out.println("What would you like to do with " + pet.getName() + "?\n");
 			System.out.println("1. Feed " + pet.getName());
 			System.out.println("2. Play with " + pet.getName());
 			System.out.println("3. Put " + pet.getName() + " to bed");
-			System.out.println("4. Quit");
-			choice = input.nextInt();
-			input.nextLine();
+			System.out.println("4. Do nothing");
+			System.out.println("5. Quit");
+			choice = input.nextLine();
 
-			if (choice == 1) {
+			// Input Results
+
+			if (choice.equalsIgnoreCase("1")) {
+				pet.tick();
 				pet.inputFeed();
 				System.out.println("\n" + pet.getName() + " happily munches on virtual food. ");
 				System.out.println("You don't quite understand how, but it fills him up.\n");
+
+			} else if (choice.equalsIgnoreCase("2")) {
 				pet.tick();
-			} else if (choice == 2) {
 				pet.inputPlay();
 				System.out.println("\n" + pet.getName() + " chases his own tail as you mysteriously");
 				System.out.println("find yourself pulling out a laser pointer and moving");
 				System.out.println("it in circles, out of your own accord.\n");
-				pet.tick();
-			} else if (choice == 3) {
-				pet.inputSleep();
-				System.out.println("");
-			}
 
+			} else if (choice.equalsIgnoreCase("3")) {
+				pet.tick();
+				pet.inputSleep();
+				System.out.println(pet.getName() + " curls up in his mysteriously obtained bed");
+				System.out.println("and goes to sleep. It wakes up later, feeling refreshed.\n ");
+
+			} else if (choice.equalsIgnoreCase("4")) {
+				pet.tick();
+				System.out.println(pet.getName() + " sits and looks away, seemingly daydreaming about");
+				System.out.println("eating, playing, and sleeping. \n");
+
+			} else if (choice.equalsIgnoreCase("5")) {
+				System.out.println(pet.getName() + " wags his tail in farewell, awaiting your return.");
+				input.close();
+				System.exit(0);
+				
+
+			} 
+			// Invalid Option
+				
+			  else { 								
+				while (!(choice.equalsIgnoreCase("1")) && !(choice.equalsIgnoreCase("2"))
+						&& !(choice.equalsIgnoreCase("3")) && !(choice.equalsIgnoreCase("2"))
+						&& !(choice.equalsIgnoreCase("2"))) {
+					System.out.println("\n" + pet.getName() + " seems to be confused.");
+					System.out.println("Please enter a valid option.");
+					choice = input.nextLine();
+					}
+				}
+
+			}
 		}
+		
 	}
-}
+
