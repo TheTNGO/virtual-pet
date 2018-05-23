@@ -1,0 +1,18 @@
+VirtualPet Stretch Outlines
+
+
+	* Cumulative Tick (every 5 ticks)
+
+		* Status
+			* Sick
+				* Death
+			* Ran Away
+
+			* Happy	
+
+
+	public void addStat (String type, int amount){
+
+		Switch type
+			case ""
+	}
