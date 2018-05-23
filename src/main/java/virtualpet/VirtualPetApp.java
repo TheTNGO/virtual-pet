@@ -92,7 +92,7 @@ public class VirtualPetApp {
 			
 			// Quit
 			} else if (choice.equalsIgnoreCase("5")) {
-				System.out.println(pet.getName() + " wags his tail in farewell, awaiting your return.");
+				System.out.println(pet.getName() + " wags its tail in farewell, awaiting your return.");
 				input.close();
 				System.exit(0);
 			}
