@@ -120,8 +120,6 @@ public class VirtualPet {
 		this.addStatMood(9);
 		this.subtractStatNutrition(4);
 	}
-	
-	
 
 	/* On Tick */
 

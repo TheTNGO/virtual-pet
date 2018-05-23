@@ -1,18 +1,17 @@
+
 VirtualPet Stretch Outlines
 
+	Cumulative Tick (every 5 ticks)
 
-	* Cumulative Tick (every 5 ticks)
+		* Conditons
 
-		* Status
-			* Sick
-				* Death
-			* Ran Away
+	Report Stats
 
-			* Happy	
-
-
-	public void addStat (String type, int amount){
-
-		Switch type
-			case ""
-	}
+		* if Nutrition < 8
+			* doesn't want to play
+			* puts toward sick/death count (+/-)
+		* if Mood: < 8
+			* gets sad (puts toward run away count)			
+		* if Energy: < 8
+			* can't play
+			* put toward recovery count (+/-)

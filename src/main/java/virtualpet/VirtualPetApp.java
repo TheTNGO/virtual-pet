@@ -10,7 +10,7 @@ public class VirtualPetApp {
 
 		/* New pet creation */
 
-		System.out.println("Welcome, and say \"Hi!\" to your new dog, your new Virtual Pet!");
+		System.out.println("Welcome, and say \"Hi!\" to your new virtual dog!");
 		System.out.println("Give your pet a name!");
 		String nameInput = input.nextLine();
 		VirtualPet pet = new VirtualPet(nameInput);
@@ -39,9 +39,9 @@ public class VirtualPetApp {
 			System.out.println("\nNutrition: " + pet.getStatNutrition());
 			System.out.println("Energy: " + pet.getStatEnergy());
 			System.out.println("Mood: " + pet.getStatMood());
-			
+
 			// Input Options
-			
+
 			System.out.println("\n" + pet.getName() + " looks at you in anticipation.");
 			System.out.println("What would you like to do with " + pet.getName() + "?\n");
 			System.out.println("1. Feed " + pet.getName());
@@ -81,23 +81,22 @@ public class VirtualPetApp {
 				System.out.println(pet.getName() + " wags his tail in farewell, awaiting your return.");
 				input.close();
 				System.exit(0);
-				
 
-			} 
+			}
+			
 			// Invalid Option
-				
-			  else { 								
+
+			else {
 				while (!(choice.equalsIgnoreCase("1")) && !(choice.equalsIgnoreCase("2"))
 						&& !(choice.equalsIgnoreCase("3")) && !(choice.equalsIgnoreCase("2"))
 						&& !(choice.equalsIgnoreCase("2"))) {
 					System.out.println("\n" + pet.getName() + " seems to be confused.");
 					System.out.println("Please enter a valid option.");
 					choice = input.nextLine();
-					}
 				}
-
 			}
+
 		}
-		
 	}
 
+}
